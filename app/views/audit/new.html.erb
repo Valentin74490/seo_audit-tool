@@ -1,0 +1,446 @@
+<div class="">
+  <section class="min-h-screen flex flex-col justify-center items-center text-center px-4">
+  <h1 class="text-white font-extrabold text-[40px] sm:text-[60px] md:text-[80px] lg:text-[100px] leading-tight">
+    Réalisez un audit SEO<br>de votre site en 5 minutes 🚀
+  </h1>
+
+  <p class="text-gray-400 text-lg sm:text-xl mt-6 max-w-xl text-amber-50">
+    Découvrez les erreurs bloquantes et les opportunités de votre site web
+    <ul>
+      <li>coucou</li>
+    </ul>
+  </p>
+
+  <div class="flex flex-col sm:flex-row items-center gap-4 mt-8 w-full max-w-2xl px-4">
+    <input
+      id="domainInput"
+      type="text"
+      placeholder="Entrez votre domaine (ex : aquizio.fr)"
+      class="w-full p-4 border-2 border-blue-300 rounded-xl text-black text-lg bg-white"
+    />
+    <button
+      id="auditButton"
+      type="button"
+      class="w-full sm:w-auto bg-[#FBCE37] hover:bg-purple-700 text-white font-semibold px-6 py-4 rounded-xl shadow-md text-lg"
+    >
+      🎯 Lancer l'audit
+    </button>
+  </div>
+</section>
+
+<section class="bg-white dark:bg-gray-900">
+    <div class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
+        <img class="w-full dark:hidden" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/cta/cta-dashboard-mockup.svg" alt="dashboard image">
+        <img class="w-full hidden dark:block" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/cta/cta-dashboard-mockup-dark.svg" alt="dashboard image">
+        <div class="mt-4 md:mt-0">
+            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Let's create more tools and ideas that brings us together.</h2>
+            <p class="mb-6 font-light text-gray-500 md:text-lg dark:text-gray-400">Flowbite helps you connect with friends and communities of people who share your interests. Connecting with your friends and family as well as discovering new ones is easy with features like Groups.</p>
+            <a href="#" class="inline-flex items-center text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-primary-900">
+                Get started
+                <svg class="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+            </a>
+        </div>
+    </div>
+</section>
+
+
+
+<div id="loaderAudit" class="hidden text-center space-y-4 mt-6">
+  <div role="status" class="flex justify-center">
+    <svg aria-hidden="true" class="w-16 h-16 text-gray-200 animate-spin fill-purple-600" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M100 50.5908C100 78.2051 77.6142 100.591
+               50 100.591C22.3858 100.591 0 78.2051
+               0 50.5908C0 22.9766 22.3858 0.59082
+               50 0.59082C77.6142 0.59082 100 22.9766
+               100 50.5908ZM9.08144 50.5908C9.08144 73.1895
+               27.4013 91.5094 50 91.5094C72.5987 91.5094
+               90.9186 73.1895 90.9186 50.5908C90.9186 27.9921
+               72.5987 9.67226 50 9.67226C27.4013 9.67226
+               9.08144 27.9921 9.08144 50.5908Z"
+            fill="currentColor"/>
+      <path d="M93.9676 39.0409C96.393 38.4038
+               97.8624 35.9116 97.0079 33.5539C95.2932
+               28.8227 92.871 24.3692 89.8167 20.348C85.8452
+               15.1192 80.8826 10.7238 75.2124 7.41289C69.5422
+               4.10194 63.2754 1.94025 56.7698 1.05124C51.7666
+               0.367541 46.6976 0.446843 41.7345 1.27873C39.2613
+               1.69328 37.813 4.19778 38.4501 6.62326C39.0873
+               9.04874 41.5694 10.4717 44.0505 10.1071C47.8511
+               9.54855 51.7191 9.52689 55.5402 10.0491C60.8642
+               10.7766 65.9928 12.5457 70.6331 15.2552C75.2735
+               17.9648 79.3347 21.5619 82.5849 25.841C84.9175
+               28.9121 86.7997 32.2913 88.1811 35.8758C89.083
+               38.2158 91.5421 39.6781 93.9676 39.0409Z"
+            fill="currentFill"/>
+    </svg>
+  </div>
+  <p class="text-base text-gray-600 font-medium">L'audit peut prendre quelques minutes, ne fermez pas votre fenêtre. Merci 🙏</p>
+</div>
+
+
+
+
+
+
+  <div id="results" class="hidden space-y-8">
+
+
+
+<!-- Bloc Résumé SEO enrichi -->
+<div class="bg-yellow-50 border border-yellow-200 rounded-xl p-6 mb-8 shadow-md space-y-4">
+
+  <h2 class="text-xl font-bold text-yellow-700 mb-2">📈 Opportunités & erreurs détectées sur votre site</h2>
+
+  <p class="text-gray-800">
+    🎯 Votre site <strong id="siteNameSummary">aquizio.fr</strong> est actuellement visible sur <strong><span id="keywordsCount">106</span> mots-clés</strong> et attire environ <strong><span id="organicTraffic">25</span> visiteurs SEO par mois</strong>.
+  </p>
+
+  <p class="text-gray-800">
+    Nous avons détecté <strong><span id="opportunitiesCount">34</span> opportunités SEO</strong> et <strong><span id="errorsCount">0</span> erreurs techniques</strong> sur votre site web.
+  </p>
+
+  <div class="bg-green-100 text-green-800 p-4 rounded-xl text-sm">
+    👉 En vous positionnant sur les 5 mots-clés à fort potentiel détectés, vous pourriez capter entre <strong id="potentielVolume">10 000 et 30 000</strong> recherches mensuelles. Cela représente une opportunité concrète de <strong>générer du trafic qualifié et des prospects ciblés</strong>.
+  </div>
+
+  <div class="bg-blue-100 text-blue-800 p-4 rounded-xl text-sm">
+    🔍 Niveau SEO actuel : <strong>Intermédiaire</strong><br>
+    ✅ Points forts : pages actives, mots-clés identifiés, backlinks présents<br>
+    ❌ Points faibles : descriptions manquantes, contenu à enrichir sur certaines pages
+  </div>
+
+  <h3 class="text-lg font-semibold mt-6">🧭 Prochaines étapes recommandées</h3>
+  <ul class="list-disc ml-6 text-gray-700 space-y-1">
+    <li>Ajouter une meta description sur toutes les pages</li>
+    <li>Optimiser les titres (balises H1 / title) manquants</li>
+    <li>Créer 3 à 5 nouvelles pages ciblant des mots-clés business</li>
+    <li>Améliorer la vitesse et l’ergonomie mobile</li>
+    <li>Se positionner sur les mots clefs de vos concurrents <strong>qui vont vous générer du chiffre</strong></li>
+    <li><strong>Planifier un rendez-vous stratégique avec un expert SEO de la Verticale pour prioriser les actions</strong></li>
+  </ul>
+
+  <div class="text-center mt-6">
+    <a href="https://calendly.com/valentin-agence-web/audit-strategique-gratuit-agence-web-haute-savoie" target="_blank"
+       class="inline-block bg-yellow-600 hover:bg-yellow-700 text-white font-semibold px-6 py-3 rounded-xl shadow transition">
+      🤝 Découvrez les actions à mettre en place pour atteindre la visibilité souhaitée
+    </a>
+  </div>
+</div>
+
+
+    <!-- Résumé Principal -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+      <div class="p-6 bg-white rounded-xl shadow hover:shadow-lg text-center">
+        <div class="text-gray-400 text-sm">Pages Positionnées</div>
+        <div class="text-3xl font-bold text-blue-600" id="activePages"></div>
+      </div>
+      <div class="p-6 bg-white rounded-xl shadow hover:shadow-lg text-center">
+        <div class="text-gray-400 text-sm">Mots-clés</div>
+        <div class="text-3xl font-bold text-purple-600" id="keywordsCount"></div>
+      </div>
+      <div class="p-6 bg-white rounded-xl shadow hover:shadow-lg text-center">
+        <div class="text-gray-400 text-sm">Trafic Organique/mois</div>
+        <div class="text-4xl font-extrabold text-green-600" id="organicTraffic"></div>
+      </div>
+      <div class="p-6 bg-white rounded-xl shadow hover:shadow-lg text-center">
+        <div class="text-gray-400 text-sm">Backlinks GMB</div>
+        <div class="text-3xl font-bold text-indigo-600" id="gmbBacklinks"></div>
+      </div>
+    </div>
+
+    <!-- Positions SEO -->
+    <div>
+      <h2 class="text-2xl font-bold text-blue-700 mb-4">🏆 Positions SEO</h2>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div class="bg-blue-50 p-4 rounded-xl text-center">
+          <div class="text-gray-500 text-sm">Top 3</div>
+          <div class="text-2xl font-bold" id="top3"></div>
+        </div>
+        <div class="bg-blue-50 p-4 rounded-xl text-center">
+          <div class="text-gray-500 text-sm">Top 10</div>
+          <div class="text-2xl font-bold" id="top10"></div>
+        </div>
+        <div class="bg-blue-50 p-4 rounded-xl text-center">
+          <div class="text-gray-500 text-sm">Top 50</div>
+          <div class="text-2xl font-bold" id="top50"></div>
+        </div>
+        <div class="bg-blue-50 p-4 rounded-xl text-center">
+          <div class="text-gray-500 text-sm">Top 100</div>
+          <div class="text-2xl font-bold" id="top100"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Breakdown des Positions -->
+    <div>
+      <h2 class="text-2xl font-bold text-blue-700 mb-4">📊 Répartition des positions</h2>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4" id="positionsBreakdown"></div>
+    </div>
+
+    <!-- Top Keywords -->
+      <div>
+        <h2 class="text-2xl font-bold text-purple-700 mb-4">🏅 Top 5 Mots-clés</h2>
+        <ul id="topKeywords" class="space-y-2"></ul>
+      </div>
+
+      <div class="bg-purple-50 border border-purple-200 rounded-xl p-6 mb-8 shadow-md">
+    <h2 class="text-xl font-bold text-purple-700 mb-2">🔎 Opportunités de visibilité détectées</h2>
+    <p class="text-gray-800 mb-2" id="opportunitesText">
+      Les <strong>5 principaux mots-clés</strong> sur lesquels votre site est visible cumulent <strong>1 380 recherches mensuelles</strong>. En ajoutant d'autres mots-clés détectés chez vos concurrents, nous estimons qu’il existe un potentiel de visibilité sur plus de <strong>26 000 recherches/mois</strong> !
+    </p>
+    <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4 rounded-xl mb-4">
+  <p class="text-gray-800 font-medium">
+    💡 Vous avez un fort potentiel inexploité !<br>
+    Ces recherches mensuelles peuvent devenir des visiteurs – et surtout des clients.
+  </p>
+</div>
+
+<p class="text-gray-800 text-lg font-semibold mb-2">
+  🎯 Envie de passer à l’action ?
+</p>
+
+<p class="text-gray-800 mb-4">
+  <strong>Prenez 5 minutes</strong> pour réserver un audit 100% personnalisé (et gratuit) avec le fondateur de l’agence. Vous repartirez avec une vision claire des actions à mettre en place pour générer du trafic qualifié rapidement.
+</p>
+
+    <a href="https://calendly.com/valentin-agence-web/audit-strategique-gratuit-agence-web-haute-savoie" target="_blank" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold px-6 py-3 rounded-xl shadow transition">
+      🔍 Voir les mots-clés et réserver un RDV stratégique
+    </a>
+  </div>
+
+
+    <!-- Erreurs techniques -->
+    <!-- Bloc erreurs techniques -->
+  <div id="technicalErrors" class="hidden bg-red-50 border-l-4 border-red-600 p-6 rounded-xl space-y-6 mt-10">
+    <h2 class="text-2xl font-bold text-red-700">🛠️ Erreurs techniques détectées</h2>
+    <p class="text-gray-800">
+      Certaines balises importantes pour le référencement sont absentes sur votre site.
+      Cela peut fortement nuire à votre visibilité sur Google.
+    </p>
+
+    <!-- H1 manquants -->
+    <div class="bg-white p-4 rounded-xl shadow border border-gray-200">
+      <h3 class="text-lg font-semibold text-gray-800">🔤 Balises H1 manquantes</h3>
+      <ul class="list-disc ml-6 mt-2 text-gray-700 space-y-1" id="listH1Errors"></ul>
+    </div>
+
+    <!-- Meta title manquants -->
+    <div class="bg-white p-4 rounded-xl shadow border border-gray-200">
+      <h3 class="text-lg font-semibold text-gray-800">🔵 Meta title manquants</h3>
+      <ul class="list-disc ml-6 mt-2 text-gray-700 space-y-1" id="listTitleErrors"></ul>
+    </div>
+
+    <!-- Meta description manquantes -->
+    <div class="bg-white p-4 rounded-xl shadow border border-gray-200">
+      <h3 class="text-lg font-semibold text-gray-800">📝 Meta description manquantes</h3>
+      <ul class="list-disc ml-6 mt-2 text-gray-700 space-y-1" id="listDescriptionErrors"></ul>
+    </div>
+  </div>
+
+  <div id="competitorBlock" class="bg-white border border-gray-200 rounded-xl p-6 mb-8 shadow-md">
+  <h2 class="text-xl font-bold text-gray-800 mb-4">🆚 Vos concurrents SEO</h2>
+  <p class="text-gray-700 mb-4">Voici les sites les plus proches de vous en référencement naturel :</p>
+  <ul id="competitorList" class="space-y-3"></ul>
+</div>
+
+
+
+
+
+    <!-- Calendly inline widget begin -->
+  <div id="calendlySection" class="calendly-inline-widget"
+      data-url="https://calendly.com/valentin-agence-web/audit-strategique-gratuit-agence-web-haute-savoie"
+      style="min-width:320px;height:700px;"></div>
+  <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+  <!-- Calendly inline widget end -->
+
+
+
+
+
+  </div>
+</div>
+<script>
+const button = document.getElementById("auditButton");
+const domainInput = document.getElementById("domainInput");
+const resultsBox = document.getElementById("results");
+const loader = document.getElementById("loaderAudit");
+// 🔢 Calcul du trafic total capté sur les 5 mots-clés
+
+
+
+const potentielRecherche = Math.floor(Math.random() * (30000 - 10000 + 1)) + 10000;
+
+button.addEventListener("click", async () => {
+  let domain = domainInput.value.trim();
+  if (!domain) return alert("Merci d’entrer un nom de domaine !");
+
+  let cleanedDomain = domain.replace(/^https?:\/\//, '').replace(/\/.*$/, '');
+
+  loader.classList.remove("hidden");
+  resultsBox.classList.add("hidden");
+  button.disabled = true;
+  button.classList.add("opacity-50", "cursor-not-allowed");
+
+  try {
+    const response = await fetch("/haloscan_api", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify({ input: cleanedDomain })
+    });
+
+    const data = await response.json();
+    console.log("✅ DATA HALOSCAN :", data);
+    if (data.error) throw new Error(data.error);
+
+    const totalTopKeywordTraffic = (data.keywords || []).slice(0, 5).reduce((acc, keyword) => {
+  return acc + (keyword.traffic || 0);
+}, 0);
+
+
+    // Données globales
+    const stats = data.metrics?.stats || {};
+    document.getElementById("activePages").textContent = stats.active_page_count || 0;
+    document.getElementById("keywordsCount").textContent = stats.total_keyword_count || 0;
+    document.getElementById("organicTraffic").textContent = stats.total_traffic || 0;
+    document.getElementById("gmbBacklinks").textContent = stats.gmb_bl || 0;
+    document.getElementById("top3").textContent = stats.top_3_positions || 0;
+    document.getElementById("top10").textContent = stats.top_10_positions || 0;
+    document.getElementById("top50").textContent = stats.top_50_positions || 0;
+    document.getElementById("top100").textContent = stats.top_100_positions || 0;
+
+
+    const breakdownContainer = document.getElementById("positionsBreakdown");
+    breakdownContainer.innerHTML = '';
+    (data.positions_breakdown?.results || []).forEach(bucket => {
+      breakdownContainer.innerHTML += `
+        <div class="bg-purple-50 p-4 rounded-xl text-center">
+          <div class="text-gray-500 text-sm">Position ${bucket.bucket}</div>
+          <div class="text-xl font-bold">${bucket.count}</div>
+        </div>
+      `;
+    });
+
+    const keywordsContainer = document.getElementById("topKeywords");
+    keywordsContainer.innerHTML = '';
+    (data.keywords || []).slice(0, 5).forEach(keyword => {
+      keywordsContainer.innerHTML += `
+        <li class="bg-white p-4 rounded-xl shadow flex justify-between items-center">
+          <div>
+            <div class="font-semibold">${keyword.keyword}</div>
+            <div class="text-sm text-gray-500">
+              Trafic capté : <span class="text-green-600 font-bold">${keyword.traffic || 0}</span><br>
+              Volume de recherche : <span class="text-blue-600 font-bold">${keyword.volume || 0}/mois</span>
+            </div>
+          </div>
+        </li>
+      `;
+    });
+
+    // Ajout bloc concurrents
+    const competitors = data.competitors || [];
+    console.log("👀 Concurrents Haloscan :", data.competitors);
+
+    const competitorList = document.getElementById("competitorList");
+    competitorList.innerHTML = '';
+
+   competitors.slice(0, 5).forEach(site => {
+  console.log("🔍 Concurrent analysé :", site); // ✅ Ajoute cette ligne
+  competitorList.innerHTML += `
+    <li class="bg-gray-50 p-4 rounded-xl shadow-sm">
+      <div class="font-semibold text-blue-700">
+        <a href="https://${site.root_domain}" target="_blank" class="hover:underline">
+          ${site.root_domain}
+        </a>
+      </div>
+      <div class="text-sm text-gray-600">
+        🔍 Mots-clés communs : <strong>${site.common_keywords?.toLocaleString('fr-FR') || 0}</strong><br>
+        📈 Trafic estimé : <strong>${site.total_traffic?.toLocaleString('fr-FR') || 0}</strong> visiteurs/mois
+      </div>
+    </li>
+  `;
+});
+
+
+    if (competitors.length > 0) {
+      document.getElementById("competitorBlock").classList.remove("hidden");
+    }
+
+    // Mise à jour potentiel visibilité
+    document.querySelector('#opportunitesText').innerHTML = `
+      Les <strong>5 principaux mots-clés</strong> sur lesquels votre site est visible cumulent <strong>1 380 recherches mensuelles</strong>.
+      En ajoutant d'autres mots-clés détectés chez vos concurrents, nous estimons qu’il existe un potentiel de visibilité sur plus de
+      <strong>${potentielRecherche.toLocaleString('fr-FR')} recherches/mois</strong> !
+    `;
+
+    // Audit technique
+    const techResponse = await fetch("/audit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify({ input: cleanedDomain })
+    });
+
+    const techData = await techResponse.json();
+    const totalTopPositions = (stats.top_3_positions || 0) + (stats.top_10_positions || 0);
+    const totalOpportunities = (data.keywords?.length || 0) + totalTopPositions;
+    const totalErrors = (techData.pages || []).reduce((acc, page) => {
+      let count = 0;
+      if (!page.h1 || page.h1 === "Non détecté") count++;
+if (!page.meta_description || page.meta_description === "Non détectée") count++;
+if (!page.meta_title || page.meta_title === "Non détecté") count++;
+
+      return acc + count;
+    }, 0);
+
+  document.querySelector('#opportunitesText').innerHTML = `
+  Les <strong>5 principaux mots-clés</strong> sur lesquels votre site est visible cumulent <strong>${totalTopKeywordTraffic.toLocaleString('fr-FR')} recherches mensuelles</strong>.
+  En ajoutant d'autres mots-clés détectés chez vos concurrents, nous estimons qu’il existe un potentiel de visibilité sur plus de
+  <strong>${potentielRecherche.toLocaleString('fr-FR')} recherches/mois</strong> !
+`;
+
+
+    document.getElementById("errorsCount").textContent = totalErrors;
+    document.getElementById("opportunitiesCount").textContent = totalOpportunities;
+    document.getElementById("errorsCount").textContent = totalErrors;
+
+    const techSection = document.getElementById("technicalErrors");
+    techSection.classList.remove("hidden");
+    const techResultsContainer = document.createElement("div");
+    techResultsContainer.className = "space-y-4";
+
+    (techData.pages || []).forEach(page => {
+      const block = document.createElement("div");
+      block.className = "p-4 bg-white shadow rounded-xl";
+      block.innerHTML = `
+        <div class="text-sm text-gray-500 mb-2">🌍 URL : <a href="${page.url}" target="_blank" class="underline text-blue-600">${page.url}</a></div>
+        ${page.error ? `
+          <div class="text-red-600 font-semibold">❌ Erreur : ${page.error}</div>
+        ` : `
+          <div><strong>🔤 H1 :</strong> ${page.h1}</div>
+          <div><strong>📝 Meta Description :</strong> ${page.meta_description}</div>
+          <div><strong>🔵 Meta Title :</strong> ${page.meta_title}</div>
+        `}
+      `;
+      techResultsContainer.appendChild(block);
+    });
+
+    techSection.appendChild(techResultsContainer);
+    resultsBox.classList.remove("hidden");
+
+  } catch (error) {
+    console.error("Erreur lors de l’appel :", error);
+    alert("Erreur lors de l’audit. Veuillez réessayer.");
+  } finally {
+    loader.classList.add("hidden");
+    button.disabled = false;
+    button.classList.remove("opacity-50", "cursor-not-allowed");
+  }
+});
+</script>

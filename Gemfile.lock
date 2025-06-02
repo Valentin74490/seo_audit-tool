@@ -104,12 +104,21 @@ GEM
       irb (~> 1.10)
       reline (>= 0.3.8)
     dotenv (3.1.8)
+    dotenv-rails (3.1.8)
+      dotenv (= 3.1.8)
+      railties (>= 6.1)
     drb (2.2.3)
     ed25519 (1.4.0)
     erb (5.0.1)
     erubi (1.13.1)
     et-orbi (1.2.11)
       tzinfo
+    ferrum (0.17.1)
+      addressable (~> 2.5)
+      base64 (~> 0.2)
+      concurrent-ruby (~> 1.1)
+      webrick (~> 1.7)
+      websocket-driver (~> 0.7)
     fugit (1.11.1)
       et-orbi (~> 1, >= 1.2.11)
       raabro (~> 1.4)
@@ -352,6 +361,7 @@ GEM
       activemodel (>= 6.0.0)
       bindex (>= 0.4.0)
       railties (>= 6.0.0)
+    webrick (1.9.1)
     websocket (1.2.11)
     websocket-driver (0.8.0)
       base64
@@ -378,9 +388,12 @@ DEPENDENCIES
   brakeman
   capybara
   debug
+  dotenv-rails
+  ferrum
   importmap-rails
   jbuilder
   kamal
+  nokogiri
   pg (~> 1.1)
   propshaft
   puma (>= 5.0)
